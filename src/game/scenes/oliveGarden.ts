@@ -1,4 +1,3 @@
-import {say} from "../say";
 import {character} from "../character";
 import {styles} from "../styles";
 import {sceneStage} from "../game";
@@ -13,8 +12,8 @@ export async function oliveGarden()
     [hubol, cole].forEach(x => x.subimage = 2);
     sceneStage.addChild(hubol, cole);
 
-    await say("That's so cute that you cook for yourself... And make drinks...");
-    await say("You really treat yourself.");
-    await say("No, I don't treat myself. I treat myself like a person.");
-    await say("Then what do I treat myself like?");
+    await hubol.say("That's so cute that you cook for yourself... And make drinks...");
+    await hubol.say("You really treat yourself.");
+    await cole.say("No, I don't treat myself. I treat myself like a person.");
+    await hubol.say("Then what do I treat myself like?");
 }

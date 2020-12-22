@@ -2,6 +2,8 @@ import {Container, Sprite, Texture} from "pixi.js";
 import {CharacterBody} from "../typedAssets/textures";
 import {subimageTextures} from "../utils/pixi/simpleSpritesheet";
 import {merge} from "../utils/merge";
+import {say} from "./say";
+import {setCurrentSpeaker} from "./speakers";
 
 export interface CharacterArgs
 {
@@ -23,7 +25,15 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
 
     container.addChild(bodySprite, headSprite, faceSprite);
 
-    const character = merge(container, { subimage: 0 });
+    const character = merge(container,
+        {
+            subimage: 0,
+            async say(text: string)
+            {
+                setCurrentSpeaker(container);
+                await say(text);
+            }
+        });
     character.pivot.set(16, 32);
 
     return character.withStep(() => {
