@@ -44,6 +44,7 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
     character.pivot.set(16, 32);
 
     let speakingSteps = 0;
+    let speakingFactor = 0;
 
     return character.withStep(() => {
         const x = Math.floor(Math.abs(character.subimage) % 3);
@@ -57,15 +58,28 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
         const isCurrentSpeaker = getCurrentSpeaker() === character;
 
         if (isSpeaking)
-            speakingSteps++;
-        else if (!isCurrentSpeaker)
-            speakingSteps = 0;
+        {
+            if (isCurrentSpeaker)
+            {
+                speakingSteps++;
+                speakingFactor = 1;
+            }
+        }
+        else
+        {
+            speakingFactor *= 0.9;
+            if (speakingFactor < 0.1)
+                speakingFactor = 0;
+            if (!isCurrentSpeaker)
+                speakingSteps = 0;
+        }
 
-        if (isCurrentSpeaker && isSpeaking)
+        if (speakingFactor > 0)
         {
             const f = Math.abs(Math.sin((speakingSteps / 60) * 12));
             const dx = lerp(0.5, 1, f);
-            headContainer.scale.set(dx, 2 - dx);
+            const ddx = lerp(1, dx, speakingFactor);
+            headContainer.scale.set(ddx, 2 - ddx);
         }
 
         character.pivot.set(16, 32);
