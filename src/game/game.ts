@@ -3,7 +3,7 @@ import {integralUpscaleCanvas} from "../utils/browser/integralUpscaleCanvas";
 import {character} from "./character";
 import {styles} from "./styles";
 import {Container} from "pixi.js";
-import {dialog} from "./dialog";
+import {say} from "./say";
 
 const game = createGame({width: 128, height: 128, targetFps: 60});
 game.canvasElement.id = "gameCanvas";
@@ -22,8 +22,8 @@ game.stage.addChild(hubol);
 export const hudStage = game.stage.addChild(new Container());
 
 setTimeout(async () => {
-    await dialog.say("That's so cute that you cook for yourself... And make drinks...");
-    await dialog.say("You really treat yourself.");
-    await dialog.say("No, I don't treat myself. I treat myself like a person.");
-    await dialog.say("Then what do I treat myself like?");
+    await say("That's so cute that you cook for yourself... And make drinks...");
+    await say("You really treat yourself.");
+    await say("No, I don't treat myself. I treat myself like a person.");
+    await say("Then what do I treat myself like?");
 })

@@ -25,15 +25,10 @@ function clearHudStage()
     hudStage.removeAllChildren();
 }
 
-class Dialog
+export function say(text: string)
 {
-    say(text: string)
-    {
-        clearHudStage();
-        return new Promise<void>(resolve => {
-            addDialogToHudStage(text, resolve);
-        });
-    }
+    clearHudStage();
+    return new Promise<void>(resolve => {
+        addDialogToHudStage(text, resolve);
+    });
 }
-
-export const dialog = new Dialog();
