@@ -2,8 +2,8 @@ import {Container, Sprite, Texture} from "pixi.js";
 import {CharacterBody} from "../typedAssets/textures";
 import {subimageTextures} from "../utils/pixi/simpleSpritesheet";
 import {merge} from "../utils/merge";
-import {say} from "./say";
-import {setCurrentSpeaker} from "./speakers";
+import {isSpeaking, say} from "./say";
+import {getCurrentSpeaker, setCurrentSpeaker} from "./speakers";
 
 export interface CharacterArgs
 {
@@ -39,8 +39,15 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
     return character.withStep(() => {
         const x = Math.floor(Math.abs(character.subimage) % 3);
         bodySprite.texture = bodyTextures[x];
+
         headSprite.y = x === 1 ? -1 : 0;
         faceSprite.y = x === 1 ? -1 : 0;
+
+        if (getCurrentSpeaker() === character && isSpeaking)
+        {
+            // TODO animate
+        }
+
         character.pivot.set(16, 32);
         if (x === 2)
             character.pivot.set(16, 28);

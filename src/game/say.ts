@@ -6,6 +6,8 @@ import {getCurrentSpeaker} from "./speakers";
 import {lerp} from "../utils/math/number";
 import {Vector} from "../utils/math/vector";
 
+export let isSpeaking = false;
+
 function addDialogToHudStage(text: string, resolve: () => void)
 {
     const bitmapText = new BitmapText(text, { fontName: AcrobatixFont.font, maxWidth: 126 }).at(1, -1);
@@ -47,6 +49,7 @@ function addDialogToHudStage(text: string, resolve: () => void)
     let textToCopy = text;
     let firstStep = true;
     let count = 0;
+    isSpeaking = true;
 
     const container = new Container()
         .on("removed", resolve)
@@ -65,9 +68,13 @@ function addDialogToHudStage(text: string, resolve: () => void)
                     textToCopy = remainingTextToCopy;
                 }
             }
-            else if (advanceKeyPressed)
+            else
             {
-                container.destroy();
+                isSpeaking = false;
+                if (advanceKeyPressed)
+                {
+                    container.destroy();
+                }
             }
         });
 

@@ -1,4 +1,4 @@
-export const now = {
+export const Now = {
     get date()
     {
         return new Date();
@@ -6,5 +6,9 @@ export const now = {
     get ms()
     {
         return new Date().getTime();
+    },
+    get s()
+    {
+        return this.ms / 1000;
     }
 }
