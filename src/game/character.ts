@@ -31,5 +31,8 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
         bodySprite.texture = bodyTextures[x];
         headSprite.y = x === 1 ? -1 : 0;
         faceSprite.y = x === 1 ? -1 : 0;
+        character.pivot.set(16, 32);
+        if (x === 2)
+            character.pivot.set(16, 28);
     });
 }

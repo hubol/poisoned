@@ -11,7 +11,7 @@ integralUpscaleCanvas(game.canvasElement, 20);
 const hubol = character(styles.hubol)
     .withStep(() => {
         hubol.subimage += 0.1;
-        if (hubol.subimage % 3 < 0.1)
+        if (hubol.subimage % 6 < 0.1)
             hubol.scale.x *= -1;
     })
     .at(64, 64);
