@@ -4,6 +4,7 @@ import {subimageTextures} from "../utils/pixi/simpleSpritesheet";
 import {merge} from "../utils/merge";
 import {isSpeaking, say} from "./say";
 import {getCurrentSpeaker, setCurrentSpeaker} from "./speakers";
+import {lerp} from "../utils/math/number";
 
 export interface CharacterArgs
 {
@@ -19,11 +20,15 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
     const headSprite = Sprite.from(headTexture);
     headSprite.tint = color;
     const faceSprite = Sprite.from(faceTexture);
+
+    const headContainer = new Container();
+    headContainer.addChild(headSprite, faceSprite);
+
     const bodySprite = Sprite.from(bodyTextures[0]);
     bodySprite.tint = color;
     const container = new Container();
 
-    container.addChild(bodySprite, headSprite, faceSprite);
+    container.addChild(bodySprite, headContainer);
 
     const character = merge(container,
         {
@@ -34,7 +39,11 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
                 await say(text);
             }
         });
+    headContainer.pivot.set(15, 21);
+    headContainer.position.set(headContainer.pivot.x, headContainer.pivot.y);
     character.pivot.set(16, 32);
+
+    let speakingSteps = 0;
 
     return character.withStep(() => {
         const x = Math.floor(Math.abs(character.subimage) % 3);
@@ -43,9 +52,20 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
         headSprite.y = x === 1 ? -1 : 0;
         faceSprite.y = x === 1 ? -1 : 0;
 
-        if (getCurrentSpeaker() === character && isSpeaking)
+        headContainer.scale.set(1, 1);
+
+        const isCurrentSpeaker = getCurrentSpeaker() === character;
+
+        if (isSpeaking)
+            speakingSteps++;
+        else if (!isCurrentSpeaker)
+            speakingSteps = 0;
+
+        if (isCurrentSpeaker && isSpeaking)
         {
-            // TODO animate
+            const f = Math.abs(Math.sin((speakingSteps / 60) * 12));
+            const dx = lerp(0.5, 1, f);
+            headContainer.scale.set(dx, 2 - dx);
         }
 
         character.pivot.set(16, 32);
