@@ -3,7 +3,7 @@ import {integralUpscaleCanvas} from "../utils/browser/integralUpscaleCanvas";
 import {Container} from "pixi.js";
 import {oliveGarden} from "./scenes/oliveGarden";
 
-const game = createGame({width: 128, height: 128, targetFps: 60});
+const game = createGame({width: 128, height: 128, targetFps: 60, hideCursor: true});
 game.canvasElement.id = "gameCanvas";
 document.body.appendChild(game.canvasElement);
 integralUpscaleCanvas(game.canvasElement, 20);
