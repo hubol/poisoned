@@ -10,7 +10,6 @@ export let CharacterFaceWhitesSmile: PIXI.Texture;
 export let CharacterHeadLemon: PIXI.Texture;
 export let CharacterHeadMessy: PIXI.Texture;
 export let CharacterHeadSharp: PIXI.Texture;
-export let Iguana: PIXI.Texture;
 
 
 export function loadTexturesAsync()
@@ -41,9 +40,6 @@ export function loadTexturesAsync()
     const CharacterHeadSharpPath = require("../../assets/images/character/head sharp.png");
     loader.add(CharacterHeadSharpPath); 
 
-    const IguanaPath = require("../../assets/images/iguana.png");
-    loader.add(IguanaPath); 
-
     
     return new Promise<void>(resolve =>
     {
@@ -56,7 +52,6 @@ export function loadTexturesAsync()
             CharacterHeadLemon = resources[CharacterHeadLemonPath]?.texture as PIXI.Texture;
             CharacterHeadMessy = resources[CharacterHeadMessyPath]?.texture as PIXI.Texture;
             CharacterHeadSharp = resources[CharacterHeadSharpPath]?.texture as PIXI.Texture;
-            Iguana = resources[IguanaPath]?.texture as PIXI.Texture;
 
             resolve();
         });
