@@ -48,10 +48,12 @@ function addDialogToHudStage(text: string, resolve: () => void)
     isSpeaking = true;
 
     const container = new Container().on("removed", resolve);
-    typeBitmapText(bitmapText, () => container.destroy(), () => isSpeaking = false);
+    typeBitmapText(bitmapText, resolve, () => isSpeaking = false);
 
     hudStage.addChild(container);
     container.addChild(graphics, tailGraphics, bitmapText);
+
+    return container;
 }
 
 function getTailTargetVector(container: Container)
@@ -76,7 +78,11 @@ function clearHudStage()
 export function say(text: string)
 {
     clearHudStage();
+    let container;
     return new Promise<void>(resolve => {
-        addDialogToHudStage(text, resolve);
+        container = addDialogToHudStage(text, resolve);
+    }).then(() => {
+        if (!container?.destroyed)
+            container?.destroy();
     });
 }
