@@ -10,13 +10,13 @@ export let isSpeaking = false;
 
 function addDialogToHudStage(text: string, resolve: () => void)
 {
-    const bitmapText = new BitmapText(text, { fontName: AcrobatixFont.font, maxWidth: 126 }).at(1, -1);
+    const bitmapText = new BitmapText(text, { fontName: AcrobatixFont.font, maxWidth: 124 }).at(2, -1);
     bitmapText.tint = 0xB14030;
     const bitmapTextHeight = bitmapText.height;
 
     const graphics = new Graphics()
         .beginFill(0xffffff)
-        .drawRect(0, 0, 128, bitmapTextHeight + 3);
+        .drawRoundedRect(0, 0, 128, bitmapTextHeight + 3, 4);
 
     function getTailSourceVector(target: Vector)
     {
