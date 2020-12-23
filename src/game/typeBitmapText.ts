@@ -1,6 +1,5 @@
 import {BitmapText} from "pixi.js";
 import {Key} from "../utils/browser/key";
-import {isSpeaking} from "./say";
 
 export function typeBitmapText(bitmapText: BitmapText, onAdvanced: () => void, onTyped?: () => void)
 {
