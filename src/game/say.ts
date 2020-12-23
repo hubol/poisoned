@@ -1,10 +1,10 @@
 import {hudStage} from "./game";
 import {BitmapText, Container, Graphics} from "pixi.js";
 import {AcrobatixFont} from "../typedAssets/fonts";
-import {Key} from "../utils/browser/key";
 import {getCurrentSpeaker} from "./speakers";
 import {lerp} from "../utils/math/number";
 import {Vector} from "../utils/math/vector";
+import {typeBitmapText} from "./typeBitmapText";
 
 export let isSpeaking = false;
 
@@ -43,40 +43,12 @@ function addDialogToHudStage(text: string, resolve: () => void)
                 .lineTo(v1.x + thickness / 2, v1.y)
                 .lineTo(v2.x, v2.y)
                 .closePath();
-        })
+        });
 
-    bitmapText.text = "";
-    let textToCopy = text;
-    let firstStep = true;
-    let count = 0;
     isSpeaking = true;
 
-    const container = new Container()
-        .on("removed", resolve)
-        .withStep(() => {
-            const advanceKeyPressed = !firstStep && Key.justWentDown("Space");
-            firstStep = false;
-
-            if (bitmapText.text !== text)
-            {
-                if (advanceKeyPressed)
-                    bitmapText.text = text;
-                else if (count++ % 4 === 0)
-                {
-                    const [ word, remainingTextToCopy ] = getNextWord(textToCopy);
-                    bitmapText.text += word;
-                    textToCopy = remainingTextToCopy;
-                }
-            }
-            else
-            {
-                isSpeaking = false;
-                if (advanceKeyPressed)
-                {
-                    container.destroy();
-                }
-            }
-        });
+    const container = new Container().on("removed", resolve);
+    typeBitmapText(bitmapText, () => container.destroy(), () => isSpeaking = false);
 
     hudStage.addChild(container);
     container.addChild(graphics, tailGraphics, bitmapText);
@@ -94,15 +66,6 @@ function getCurrentSpeakerAsContainer()
     if (currentSpeaker instanceof Container)
         return currentSpeaker;
     return null;
-}
-
-function getNextWord(text: string): [word: string, remaining: string]
-{
-    const endOfWordIndex = text.indexOf(" ");
-    if (endOfWordIndex === -1)
-        return [text, ""];
-
-    return [text.substr(0, endOfWordIndex + 1), text.substr(endOfWordIndex + 1)]
 }
 
 function clearHudStage()
