@@ -1,13 +1,15 @@
 import {character} from "../character";
 import {styles} from "../styles";
 import {sleep} from "pissant";
-import {sceneStage} from "../game";
+import {background, sceneStage} from "../game";
 import {HeldHands} from "../../typedAssets/textures";
 import {Container, Graphics, Sprite} from "pixi.js";
 import {Now} from "../../utils/now";
 
 export async function hickoryHill()
 {
+    background.tint = 0x2657A0;
+
     function f(x: number)
     {
         const dx = x - Now.s;
@@ -18,8 +20,6 @@ export async function hickoryHill()
         .withStep(() => {
             terrain
                 .clear()
-                .beginFill(0x2657A0)
-                .drawRect(0, 0, 128, 128)
                 .beginFill(0xF2EFA4);
             terrain.moveTo(0, 128);
 
