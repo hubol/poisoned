@@ -2,13 +2,15 @@ import {character} from "../character";
 import {styles} from "../styles";
 import {sceneStage} from "../game";
 import {sleep} from "pissant";
+import {Sprite} from "pixi.js";
+import {BackgroundStreetCorner} from "../../typedAssets/textures";
 
 export async function streetCorner()
 {
     const hubol = character(styles.hubol).at(50, 100);
     const trey = character(styles.trey).at(30, 100);
     [hubol, trey].forEach(x => x.subimage = 2);
-    sceneStage.addChild(hubol, trey);
+    sceneStage.addChild(Sprite.from(BackgroundStreetCorner), hubol, trey);
 
     await sleep(1000);
     await hubol.say("I don't want to make myself sound like a superhero...");
