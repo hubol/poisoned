@@ -3,6 +3,7 @@ import {styles} from "../styles";
 import {sceneStage} from "../game";
 import {Sprite} from "pixi.js";
 import {BackgroundOliveGarden} from "../../typedAssets/textures";
+import {sleep} from "pissant";
 
 export async function oliveGarden()
 {
@@ -15,8 +16,10 @@ export async function oliveGarden()
     [hubol, cole].forEach(x => x.subimage = 2);
     sceneStage.addChild(hubol, cole);
 
+    await sleep(1000);
     await hubol.say("That's so cute that you cook for yourself... And make drinks...");
     await hubol.say("You really treat yourself.");
     await cole.say("No, I don't treat myself. I treat myself like a person.");
     await hubol.say("Then what do I treat myself like?");
+    await sleep(1000);
 }
