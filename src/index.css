@@ -10,7 +10,7 @@ html {
 }
 
 #gameCanvas {
-    box-shadow: 3vmin 3vmin #006060;
+    box-shadow: 0 0 8vmin #cd6767;
 }
 
 #startButton {
@@ -42,7 +42,7 @@ html {
 }
 
 body {
-    background-color: #008080;
+    background-color: #f0c0c0;
     display: flex;
     justify-content: center;
     align-items: center;
