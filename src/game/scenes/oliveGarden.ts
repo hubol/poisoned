@@ -1,9 +1,12 @@
 import {character} from "../character";
 import {styles} from "../styles";
 import {sceneStage} from "../game";
+import {Sprite} from "pixi.js";
+import {BackgroundOliveGarden} from "../../typedAssets/textures";
 
 export async function oliveGarden()
 {
+    sceneStage.addChild(Sprite.from(BackgroundOliveGarden));
     const padding = 40;
     const y = 118;
     const hubol = character(styles.hubol).at(padding, y);

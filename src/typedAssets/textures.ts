@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
     
 // This file is generated. Do not touch.
 
+export let BackgroundOliveGarden: PIXI.Texture;
 export let CharacterBody: PIXI.Texture;
 export let CharacterFaceAmusedClosed: PIXI.Texture;
 export let CharacterFaceDead: PIXI.Texture;
@@ -15,6 +16,9 @@ export let Iguana: PIXI.Texture;
 export function loadTexturesAsync()
 {
     const loader = new PIXI.Loader();
+
+    const BackgroundOliveGardenPath = require("../../assets/images/background/olive garden.png");
+    loader.add(BackgroundOliveGardenPath); 
 
     const CharacterBodyPath = require("../../assets/images/character/body.png");
     loader.add(CharacterBodyPath); 
@@ -44,6 +48,7 @@ export function loadTexturesAsync()
     return new Promise<void>(resolve =>
     {
         loader.load((_, resources) => {
+            BackgroundOliveGarden = resources[BackgroundOliveGardenPath]?.texture as PIXI.Texture;
             CharacterBody = resources[CharacterBodyPath]?.texture as PIXI.Texture;
             CharacterFaceAmusedClosed = resources[CharacterFaceAmusedClosedPath]?.texture as PIXI.Texture;
             CharacterFaceDead = resources[CharacterFaceDeadPath]?.texture as PIXI.Texture;
