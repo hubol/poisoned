@@ -21,6 +21,7 @@ declare global {
         export interface Container {
             removeAllChildren();
             addChild<T extends DisplayObject>(child: T): T;
+            addChildren(children: DisplayObject[]);
             withTicker(ticker: AsshatTicker): this;
         }
     }
@@ -91,6 +92,11 @@ PIXI.Container.prototype.removeAllChildren = function ()
     });
 
     this.removeChildren();
+}
+
+PIXI.Container.prototype.addChildren = function (children)
+{
+    children.forEach(x => this.addChild(x));
 }
 
 // Test if this container collides with any of the specified containers taking into account the offset, if specified

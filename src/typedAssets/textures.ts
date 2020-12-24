@@ -16,7 +16,10 @@ export let CharacterHeadLemon: PIXI.Texture;
 export let CharacterHeadMessy: PIXI.Texture;
 export let CharacterHeadPointed: PIXI.Texture;
 export let CharacterHeadSharp: PIXI.Texture;
+export let Cone: PIXI.Texture;
 export let HeldHands: PIXI.Texture;
+export let IsoscelesTriangle: PIXI.Texture;
+export let PythagoreanTheorem: PIXI.Texture;
 
 
 export function loadTexturesAsync()
@@ -65,8 +68,17 @@ export function loadTexturesAsync()
     const CharacterHeadSharpPath = require("../../assets/images/character/head sharp.png");
     loader.add(CharacterHeadSharpPath); 
 
+    const ConePath = require("../../assets/images/cone.png");
+    loader.add(ConePath); 
+
     const HeldHandsPath = require("../../assets/images/held hands.png");
     loader.add(HeldHandsPath); 
+
+    const IsoscelesTrianglePath = require("../../assets/images/isosceles triangle.png");
+    loader.add(IsoscelesTrianglePath); 
+
+    const PythagoreanTheoremPath = require("../../assets/images/pythagorean theorem.png");
+    loader.add(PythagoreanTheoremPath); 
 
     
     return new Promise<void>(resolve =>
@@ -86,7 +98,10 @@ export function loadTexturesAsync()
             CharacterHeadMessy = resources[CharacterHeadMessyPath]?.texture as PIXI.Texture;
             CharacterHeadPointed = resources[CharacterHeadPointedPath]?.texture as PIXI.Texture;
             CharacterHeadSharp = resources[CharacterHeadSharpPath]?.texture as PIXI.Texture;
+            Cone = resources[ConePath]?.texture as PIXI.Texture;
             HeldHands = resources[HeldHandsPath]?.texture as PIXI.Texture;
+            IsoscelesTriangle = resources[IsoscelesTrianglePath]?.texture as PIXI.Texture;
+            PythagoreanTheorem = resources[PythagoreanTheoremPath]?.texture as PIXI.Texture;
 
             resolve();
         });
