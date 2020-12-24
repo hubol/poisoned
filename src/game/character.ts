@@ -34,6 +34,7 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
         {
             facingAway: false,
             subimage: 0,
+            shake: { x: 0, y: 0 },
             async say(text: string)
             {
                 setCurrentSpeaker(container);
@@ -46,6 +47,7 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
 
     let speakingSteps = 0;
     let speakingFactor = 0;
+    let shakeSteps = 0;
 
     return character.withStep(() => {
         const x = Math.floor(Math.abs(character.subimage) % 3);
@@ -87,5 +89,11 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
         character.pivot.set(16, 32);
         if (x === 2)
             character.pivot.set(16, 28);
+
+        const cycle = 4;
+        shakeSteps = (shakeSteps + 1) % cycle;
+        const shakeAnimation = Math.floor(shakeSteps / (cycle / 2)) * 2 - 1;
+        character.x += character.shake.x * shakeAnimation;
+        character.y += character.shake.y * shakeAnimation;
     });
 }

@@ -29,7 +29,11 @@ export async function breadGarden()
     await hubol.say("HMM...");
     await sleep(2000);
     await lerp(math, "alpha").to(0).over(250);
+    const position = vector(hubol);
+    hubol.shake.x = 1;
     await hubol.say("HMMMMM!!!");
+    hubol.at(position);
+    hubol.shake.x = 0;
     await sleep(1000);
     await hubol.say("Maybe it's because you like me?");
     await sleep(1000);
