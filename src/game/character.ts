@@ -32,6 +32,7 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
 
     const character = merge(container,
         {
+            facingAway: false,
             subimage: 0,
             async say(text: string)
             {
@@ -52,6 +53,7 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
 
         headSprite.y = x === 1 ? -1 : 0;
         faceSprite.y = x === 1 ? -1 : 0;
+        faceSprite.visible = !character.facingAway;
 
         headContainer.scale.set(1, 1);
 

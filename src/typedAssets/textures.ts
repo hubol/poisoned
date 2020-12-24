@@ -3,6 +3,7 @@ import * as PIXI from "pixi.js";
 // This file is generated. Do not touch.
 
 export let BackgroundBathroomExterior: PIXI.Texture;
+export let BackgroundCafeExterior: PIXI.Texture;
 export let BackgroundOliveGarden: PIXI.Texture;
 export let BackgroundStreetCorner: PIXI.Texture;
 export let CharacterBody: PIXI.Texture;
@@ -23,6 +24,9 @@ export function loadTexturesAsync()
 
     const BackgroundBathroomExteriorPath = require("../../assets/images/background/bathroom exterior.png");
     loader.add(BackgroundBathroomExteriorPath); 
+
+    const BackgroundCafeExteriorPath = require("../../assets/images/background/cafe exterior.png");
+    loader.add(BackgroundCafeExteriorPath); 
 
     const BackgroundOliveGardenPath = require("../../assets/images/background/olive garden.png");
     loader.add(BackgroundOliveGardenPath); 
@@ -65,6 +69,7 @@ export function loadTexturesAsync()
     {
         loader.load((_, resources) => {
             BackgroundBathroomExterior = resources[BackgroundBathroomExteriorPath]?.texture as PIXI.Texture;
+            BackgroundCafeExterior = resources[BackgroundCafeExteriorPath]?.texture as PIXI.Texture;
             BackgroundOliveGarden = resources[BackgroundOliveGardenPath]?.texture as PIXI.Texture;
             BackgroundStreetCorner = resources[BackgroundStreetCornerPath]?.texture as PIXI.Texture;
             CharacterBody = resources[CharacterBodyPath]?.texture as PIXI.Texture;
