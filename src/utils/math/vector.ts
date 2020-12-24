@@ -18,6 +18,12 @@ export function perpendicular(vec: Vector) {
     return vec;
 }
 
+export function scale(vec: Vector, factor: number) {
+    vec.x *= factor;
+    vec.y *= factor;
+    return vec;
+}
+
 export function dot(vec1: Vector, vec2: Vector) {
     return vec1.x * vec2.x + vec1.y * vec2.y;
 }

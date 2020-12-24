@@ -4,7 +4,7 @@ import {sceneStage} from "../game";
 import {Container, DisplayObject, Sprite, Texture} from "pixi.js";
 import {sleep} from "pissant";
 import {BackgroundBreadGarden, Cone, IsoscelesTriangle, PythagoreanTheorem} from "../../typedAssets/textures";
-import {add} from "../../utils/math/vector";
+import {add, normalize, scale, vector} from "../../utils/math/vector";
 import {lerp} from "../lerp";
 
 export async function breadGarden()
@@ -38,21 +38,22 @@ export async function breadGarden()
 function createMath(hubol: DisplayObject)
 {
     const container = sceneStage.addChild(new Container());
-    const pieces = [
-        mathPiece(PythagoreanTheorem).at(add({ x: 2, y: - 32 }, hubol)),
-        mathPiece(IsoscelesTriangle).at(add({ x: 2, y: - 32 }, hubol)),
-        mathPiece(Cone).at(add({ x: 0, y: - 32 }, hubol)),
+    const pieceFactories = [
+        () => mathPiece(PythagoreanTheorem).at(add({ x: 2, y: - 32 }, hubol)),
+        () => mathPiece(IsoscelesTriangle).at(add({ x: 2, y: - 32 }, hubol)),
+        () => mathPiece(Cone).at(add({ x: 0, y: - 32 }, hubol)),
     ];
-
-    container.addChildren(pieces);
 
     setTimeout(async () => {
        while (true)
        {
-           for (const piece of pieces) {
+           for (const pieceFactory of pieceFactories) {
+               const piece = pieceFactory();
+               container.addChild(piece);
                await lerp(piece, "alpha").to(1).over(250);
                await sleep(500);
                await lerp(piece, "alpha").to(0).over(250);
+               piece.destroy();
            }
        }
     });
@@ -62,7 +63,16 @@ function createMath(hubol: DisplayObject)
 
 function mathPiece(texture: Texture)
 {
-    const sprite = Sprite.from(texture);
+    const speed = scale(normalize({ x: -.5 + Math.random(), y: -.5 + Math.random() }), 0.2);
+    let pos;
+    const sprite = Sprite.from(texture)
+        .withStep(() => {
+            if (!pos)
+                pos = vector(sprite.position);
+
+            add(pos, speed);
+            sprite.position.set(Math.round(pos.x), Math.round(pos.y));
+        });
 
     sprite.anchor.set(0.5, 1);
     sprite.alpha = 0;
