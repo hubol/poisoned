@@ -4,6 +4,7 @@ import {sceneStage} from "../game";
 import {Sprite} from "pixi.js";
 import {BackgroundOliveGarden} from "../../typedAssets/textures";
 import {sleep} from "pissant";
+import {narrator} from "../narrator";
 
 function oliveGarden() {
     sceneStage.addChild(Sprite.from(BackgroundOliveGarden));
@@ -26,6 +27,8 @@ export async function oliveGarden1()
     await hubol.say("You really treat yourself.");
     await cole.say("No, I don't treat myself. I treat myself like a person.");
     await hubol.say("Then what do I treat myself like?");
+    await sleep(1500);
+    await narrator.say("You probably said something witty, but I don't remember what it was.")
     await sleep(1000);
 }
 
