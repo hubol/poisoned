@@ -50,6 +50,9 @@ image-rendering: pixelated;`;
         canvasElement,
         stage: app.stage.withTicker(ticker),
         ticker,
+        get maxFps() {
+            return app.ticker.maxFPS;
+        },
         get width() {
             return app.renderer.width;
         },

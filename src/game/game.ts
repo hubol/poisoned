@@ -4,7 +4,7 @@ import {Container, Graphics} from "pixi.js";
 import {makeOnClickAliasForSpacebarPress} from "./makeOnClickAliasForSpacebarPress";
 import {runOfShow} from "./runOfShow";
 
-const game = createGame({width: 128, height: 128, targetFps: 60, hideCursor: true});
+export const game = createGame({width: 128, height: 128, targetFps: 60, hideCursor: true});
 game.canvasElement.id = "gameCanvas";
 document.body.appendChild(game.canvasElement);
 integralUpscaleCanvas(game.canvasElement, 20);
