@@ -5,6 +5,7 @@ import {getCurrentSpeaker} from "./speakers";
 import {lerp} from "../utils/math/number";
 import {Vector} from "../utils/math/vector";
 import {typeBitmapText} from "./typeBitmapText";
+import {showDialog} from "./showDialog";
 
 export let isSpeaking = false;
 
@@ -70,19 +71,7 @@ function getCurrentSpeakerAsContainer()
     return null;
 }
 
-function clearHudStage()
-{
-    hudStage.removeAllChildren();
-}
-
 export function say(text: string)
 {
-    clearHudStage();
-    let container;
-    return new Promise<void>(resolve => {
-        container = addDialogToHudStage(text, resolve);
-    }).then(() => {
-        if (!container?.destroyed)
-            container?.destroy();
-    });
+    return showDialog(resolve => addDialogToHudStage(text, resolve));
 }
