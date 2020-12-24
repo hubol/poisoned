@@ -5,6 +5,7 @@ import {background, sceneStage} from "../game";
 import {HeldHands} from "../../typedAssets/textures";
 import {Container, Graphics, Sprite} from "pixi.js";
 import {Now} from "../../utils/now";
+import {narrator} from "../narrator";
 
 export async function hickoryHill()
 {
@@ -54,5 +55,7 @@ export async function hickoryHill()
 
     await sleep(5000);
     await cole.say("Have you fallen for me?");
-    await sleep(5000);
+    await sleep(2500);
+    await narrator.say("I don't remember how I responded.")
+    await sleep(2500);
 }

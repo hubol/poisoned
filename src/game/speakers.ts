@@ -13,3 +13,8 @@ export function setCurrentSpeaker(speaker: Speaker)
 {
     currentSpeaker = speaker;
 }
+
+export function clearCurrentSpeaker()
+{
+    currentSpeaker = null;
+}
