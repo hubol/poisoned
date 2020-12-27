@@ -8,8 +8,8 @@ import {hyvee} from "./scenes/hyvee";
 import {zoomWithJosh} from "./scenes/zoomWithJosh";
 
 export const runOfShow = [
-    zoomWithJosh,
     hyvee,
+    zoomWithJosh,
     breadGarden,
     cafeExterior,
     bathroomExterior,

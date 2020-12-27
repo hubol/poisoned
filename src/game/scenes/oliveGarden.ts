@@ -39,7 +39,7 @@ export async function oliveGarden2()
     await sleep(1000);
     await hubol.say("Do you know the heimlich?");
     await cole.say("Yes, why?");
-    await hubol.say("Oh, because I almost choked.");
+    await hubol.say("Oh, because I almost choked just now.");
     await cole.say("You--you can't just casually ask if I know the heimlich while you're choking!");
     await hubol.say("Oh, well I don't know the heimlich.");
     await cole.say("Why don't you know the heimlich?");

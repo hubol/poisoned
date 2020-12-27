@@ -22,5 +22,5 @@ export async function zoomWithJosh()
     await josh.say("I understand.");
     await sleep(2000);
     await josh.say("I just want you to know, I don't condemn you.");
-    await sleep(1000);
+    await sleep(2000);
 }

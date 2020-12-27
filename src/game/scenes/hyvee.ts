@@ -22,11 +22,14 @@ export async function hyvee()
     await narrator.say("I thought I saw Trey at the grocery.");
 
     hubol.shake.x = 1;
-    const blurFilter = new filters.BlurFilter(0);
-    blurred.filters = [blurFilter];
+    const noiseFilter = new filters.NoiseFilter(0);
+    setTimeout(async () => await lerp(noiseFilter, "noise").to(0.15).over(6000));
+    blurred.withStep(() => noiseFilter.seed = Math.random());
+    const blurFilter = new filters.BlurFilter(0, 6);
+    blurred.filters = [blurFilter, noiseFilter];
     await lerp(blurFilter, "blur").to(8).over(3000);
 
     await sleep(500);
-    await narrator.say("I started shaking and wanted to leave.");
+    await narrator.say("I wanted to leave.");
     await sleep(1000);
 }
