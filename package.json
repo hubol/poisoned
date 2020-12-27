@@ -27,6 +27,7 @@
   "dependencies": {
     "howler": "^2.2.1",
     "pissant": "^0.1.2",
+    "pixi-filters": "^3.2.0",
     "pixi.js": "^5.3.3"
   }
 }
