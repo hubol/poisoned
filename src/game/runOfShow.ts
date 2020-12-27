@@ -5,8 +5,10 @@ import {bathroomExterior} from "./scenes/bathroomExterior";
 import {cafeExterior} from "./scenes/cafeExterior";
 import {breadGarden} from "./scenes/breadGarden";
 import {hyvee} from "./scenes/hyvee";
+import {zoomWithJosh} from "./scenes/zoomWithJosh";
 
 export const runOfShow = [
+    zoomWithJosh,
     hyvee,
     breadGarden,
     cafeExterior,
