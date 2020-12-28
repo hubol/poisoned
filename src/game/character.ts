@@ -5,17 +5,19 @@ import {merge} from "../utils/merge";
 import {isSpeaking, say} from "./say";
 import {getCurrentSpeaker, setCurrentSpeaker} from "./speakers";
 import {lerp} from "../utils/math/number";
+import {Howl} from "howler";
 
 export interface CharacterArgs
 {
     faceTexture: Texture;
     headTexture: Texture;
     color: number;
+    voice: Howl;
 }
 
 const bodyTextures = subimageTextures(CharacterBody, 3);
 
-export function character({color, faceTexture, headTexture}: CharacterArgs)
+export function character({color, faceTexture, headTexture, voice}: CharacterArgs)
 {
     const headSprite = Sprite.from(headTexture);
     headSprite.tint = color;
@@ -35,6 +37,7 @@ export function character({color, faceTexture, headTexture}: CharacterArgs)
             facingAway: false,
             subimage: 0,
             shake: { x: 0, y: 0 },
+            voice,
             async say(text: string)
             {
                 setCurrentSpeaker(container);

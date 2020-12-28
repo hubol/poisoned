@@ -12,6 +12,16 @@ export const VoiceDecay = new Howl({
     
 });
 
+export const VoiceDecay2 = new Howl({
+    src: [require("../../.converted/sounds/voice decay2.ogg"), require("../../.converted/sounds/voice decay2.mp3")],
+    
+});
+
+export const VoiceGay = new Howl({
+    src: [require("../../.converted/sounds/voice gay.ogg"), require("../../.converted/sounds/voice gay.mp3")],
+    
+});
+
 export const VoiceLow = new Howl({
     src: [require("../../.converted/sounds/voice low.ogg"), require("../../.converted/sounds/voice low.mp3")],
     

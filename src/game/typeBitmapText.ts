@@ -1,6 +1,6 @@
 import {BitmapText} from "pixi.js";
 import {Key} from "../utils/browser/key";
-import {VoiceDecay} from "../typedAssets/sounds";
+import {getCurrentSpeakerVoice} from "./speakers";
 
 export function typeBitmapText(bitmapText: BitmapText, onAdvanced: () => void, onTyped?: () => void)
 {
@@ -21,7 +21,7 @@ export function typeBitmapText(bitmapText: BitmapText, onAdvanced: () => void, o
                     bitmapText.text = text;
                 else if (count++ % 4 === 0)
                 {
-                    VoiceDecay.play();
+                    getCurrentSpeakerVoice().play();
                     const [word, remainingTextToCopy] = getNextWord(textToCopy);
                     bitmapText.text += word;
                     textToCopy = remainingTextToCopy;

@@ -1,6 +1,8 @@
 import {Vector} from "../utils/math/vector";
+import {Howl} from "howler";
+import {VoiceDecay} from "../typedAssets/sounds";
 
-type Speaker = Vector;
+type Speaker = Vector & { voice?: Howl };
 
 let currentSpeaker: Speaker | null;
 
@@ -17,4 +19,10 @@ export function setCurrentSpeaker(speaker: Speaker)
 export function clearCurrentSpeaker()
 {
     currentSpeaker = null;
+}
+
+export function getCurrentSpeakerVoice()
+{
+    const voice = currentSpeaker?.voice;
+    return voice ? voice : VoiceDecay;
 }
