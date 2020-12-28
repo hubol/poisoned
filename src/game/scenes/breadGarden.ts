@@ -6,6 +6,7 @@ import {sleep} from "pissant";
 import {BackgroundBreadGarden, Cone, IsoscelesTriangle, PythagoreanTheorem} from "../../typedAssets/textures";
 import {add, normalize, scale, vector} from "../../utils/math/vector";
 import {lerp} from "../lerp";
+import {MathAppear} from "../../typedAssets/sounds";
 
 export async function breadGarden()
 {
@@ -49,15 +50,23 @@ function createMath(hubol: DisplayObject)
     ];
 
     setTimeout(async () => {
+        let volume = 0.5;
        while (true)
        {
            for (const pieceFactory of pieceFactories) {
+               if (container.alpha < 0.1)
+                   return;
                const piece = pieceFactory();
                container.addChild(piece);
+               MathAppear.stop();
+               MathAppear.rate(0.8 + Math.random() * 0.4);
+               MathAppear.volume(volume);
+               MathAppear.play();
                await lerp(piece, "alpha").to(1).over(250);
                await sleep(500);
                await lerp(piece, "alpha").to(0).over(250);
                piece.destroy();
+               volume *= 0.9125;
            }
        }
     });

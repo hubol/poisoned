@@ -7,6 +7,11 @@ export const CratePickup = new Howl({
     
 });
 
+export const MathAppear = new Howl({
+    src: [require("../../.converted/sounds/math appear.ogg"), require("../../.converted/sounds/math appear.mp3")],
+    
+});
+
 export const VoiceDecay = new Howl({
     src: [require("../../.converted/sounds/voice decay.ogg"), require("../../.converted/sounds/voice decay.mp3")],
     
