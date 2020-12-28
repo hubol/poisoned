@@ -11,7 +11,7 @@ import {lerp} from "../lerp";
 export async function hyvee()
 {
     const hubol = character(styles.hubol).at(50, 119);
-    const trey = character(styles.trey).at(25, 92);
+    const trey = character(styles.trey).at(-25, 92);
 
     const blurred = new Container();
     sceneStage.addChild(blurred, hubol);
@@ -20,6 +20,13 @@ export async function hyvee()
 
     await sleep(1000);
     await narrator.say("I thought I saw Trey at the grocery.");
+    await sleep(1000);
+
+    await trey.walkTo(25, 0.67);
+    await sleep(1000);
+    hubol.facingAway = true;
+    await sleep(1000);
+    hubol.facingAway = false;
 
     hubol.shake.x = 1;
     const noiseFilter = new filters.NoiseFilter(0);

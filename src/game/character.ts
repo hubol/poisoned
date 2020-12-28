@@ -6,6 +6,7 @@ import {isSpeaking, say} from "./say";
 import {getCurrentSpeaker, setCurrentSpeaker} from "./speakers";
 import {lerp} from "../utils/math/number";
 import {Howl} from "howler";
+import {tickerWait} from "./tickerWait";
 
 export interface CharacterArgs
 {
@@ -42,6 +43,31 @@ export function character({color, faceTexture, headTexture, voice}: CharacterArg
             {
                 setCurrentSpeaker(container);
                 await say(text);
+            },
+            async walkTo(x: number, speed = 1)
+            {
+                speed = Math.abs(speed);
+                const sign = Math.sign(x - character.x + .001);
+                character.scale.x = Math.abs(character.scale.x) * sign;
+                character.subimage = 0;
+                let pedometer = 0;
+                let virtualX = character.x;
+                await tickerWait(() => {
+                   pedometer += speed;
+                   if (pedometer > 8)
+                   {
+                       character.subimage = character.subimage === 0 ? 1 : 0;
+                       pedometer = 0;
+                   }
+                   virtualX += sign * speed;
+                   if ((sign > 0 && virtualX >= x) || (sign < 0 && virtualX <= x))
+                   {
+                       virtualX = x;
+                       character.subimage = 0;
+                   }
+                   character.x = Math.round(virtualX);
+                   return virtualX === x;
+                });
             }
         });
     headContainer.pivot.set(15, 21);
