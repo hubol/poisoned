@@ -6,8 +6,10 @@ import {cafeExterior} from "./scenes/cafeExterior";
 import {breadGarden} from "./scenes/breadGarden";
 import {hyvee} from "./scenes/hyvee";
 import {zoomWithJosh} from "./scenes/zoomWithJosh";
+import {lunchWithExCoworkers} from "./scenes/lunchWithExCoworkers";
 
 export const runOfShow = [
+    lunchWithExCoworkers,
     hyvee,
     zoomWithJosh,
     breadGarden,

@@ -1,9 +1,10 @@
 import {
     CharacterFaceAmusedClosed, CharacterFaceChristian,
-    CharacterFaceDead, CharacterFacePeering,
-    CharacterFaceWhitesSmile, CharacterHeadBoyish,
+    CharacterFaceClueless,
+    CharacterFaceDead, CharacterFaceMiserable, CharacterFacePeering,
+    CharacterFaceWhitesSmile, CharacterHeadBald, CharacterHeadBoyish,
     CharacterHeadLemon, CharacterHeadMessy, CharacterHeadPointed,
-    CharacterHeadSharp
+    CharacterHeadSharp, CharacterHeadShoulderLengthHair
 } from "../typedAssets/textures";
 import {Texture} from "pixi.js";
 import {Howl} from "howler";
@@ -16,6 +17,8 @@ export const styles = {
     trey: style(0xFCA1CD, CharacterHeadMessy, CharacterFaceAmusedClosed, VoiceGay),
     john: style(0xF49B46, CharacterHeadPointed, CharacterFacePeering, VoiceLow),
     josh: style(0xC7B6EA, CharacterHeadBoyish, CharacterFaceChristian, VoiceRough),
+    keane: style(0x92C98D, CharacterHeadShoulderLengthHair, CharacterFaceMiserable, VoiceLow),
+    valera: style(0xB2B596, CharacterHeadBald, CharacterFaceClueless, VoiceRough),
 };
 
 function style(color: number, headTexture: Texture, faceTexture: Texture, voice: Howl): CharacterArgs
