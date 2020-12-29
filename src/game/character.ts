@@ -126,3 +126,5 @@ export function character({color, faceTexture, headTexture, voice}: CharacterArg
         character.y += character.shake.y * shakeAnimation;
     });
 }
+
+export type Character = ReturnType<typeof character>;
