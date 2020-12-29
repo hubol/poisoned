@@ -12,6 +12,11 @@ export const MathAppear = new Howl({
     
 });
 
+export const Snap = new Howl({
+    src: [require("../../.converted/sounds/snap.ogg"), require("../../.converted/sounds/snap.mp3")],
+    
+});
+
 export const Step1 = new Howl({
     src: [require("../../.converted/sounds/step1.ogg"), require("../../.converted/sounds/step1.mp3")],
     
