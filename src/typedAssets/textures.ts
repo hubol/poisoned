@@ -10,6 +10,7 @@ export let BackgroundHyvee: PIXI.Texture;
 export let BackgroundLunchWithExCoworkers: PIXI.Texture;
 export let BackgroundOliveGarden: PIXI.Texture;
 export let BackgroundStreetCorner: PIXI.Texture;
+export let BackgroundTvStudio: PIXI.Texture;
 export let BackgroundZoomWithJosh: PIXI.Texture;
 export let CharacterBody: PIXI.Texture;
 export let CharacterFaceAmusedClosed: PIXI.Texture;
@@ -28,6 +29,7 @@ export let CharacterHeadSharp: PIXI.Texture;
 export let CharacterHeadShoulderLengthHair: PIXI.Texture;
 export let Cone: PIXI.Texture;
 export let HeldHands: PIXI.Texture;
+export let Ipad: PIXI.Texture;
 export let IsoscelesTriangle: PIXI.Texture;
 export let PythagoreanTheorem: PIXI.Texture;
 
@@ -59,6 +61,9 @@ export function loadTexturesAsync()
 
     const BackgroundStreetCornerPath = require("../../assets/images/background/street corner.png");
     loader.add(BackgroundStreetCornerPath); 
+
+    const BackgroundTvStudioPath = require("../../assets/images/background/tv studio.png");
+    loader.add(BackgroundTvStudioPath); 
 
     const BackgroundZoomWithJoshPath = require("../../assets/images/background/zoom with josh.png");
     loader.add(BackgroundZoomWithJoshPath); 
@@ -114,6 +119,9 @@ export function loadTexturesAsync()
     const HeldHandsPath = require("../../assets/images/held hands.png");
     loader.add(HeldHandsPath); 
 
+    const IpadPath = require("../../assets/images/ipad.png");
+    loader.add(IpadPath); 
+
     const IsoscelesTrianglePath = require("../../assets/images/isosceles triangle.png");
     loader.add(IsoscelesTrianglePath); 
 
@@ -132,6 +140,7 @@ export function loadTexturesAsync()
             BackgroundLunchWithExCoworkers = resources[BackgroundLunchWithExCoworkersPath]?.texture as PIXI.Texture;
             BackgroundOliveGarden = resources[BackgroundOliveGardenPath]?.texture as PIXI.Texture;
             BackgroundStreetCorner = resources[BackgroundStreetCornerPath]?.texture as PIXI.Texture;
+            BackgroundTvStudio = resources[BackgroundTvStudioPath]?.texture as PIXI.Texture;
             BackgroundZoomWithJosh = resources[BackgroundZoomWithJoshPath]?.texture as PIXI.Texture;
             CharacterBody = resources[CharacterBodyPath]?.texture as PIXI.Texture;
             CharacterFaceAmusedClosed = resources[CharacterFaceAmusedClosedPath]?.texture as PIXI.Texture;
@@ -150,6 +159,7 @@ export function loadTexturesAsync()
             CharacterHeadShoulderLengthHair = resources[CharacterHeadShoulderLengthHairPath]?.texture as PIXI.Texture;
             Cone = resources[ConePath]?.texture as PIXI.Texture;
             HeldHands = resources[HeldHandsPath]?.texture as PIXI.Texture;
+            Ipad = resources[IpadPath]?.texture as PIXI.Texture;
             IsoscelesTriangle = resources[IsoscelesTrianglePath]?.texture as PIXI.Texture;
             PythagoreanTheorem = resources[PythagoreanTheoremPath]?.texture as PIXI.Texture;
 
