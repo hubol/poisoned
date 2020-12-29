@@ -7,6 +7,7 @@ import {getCurrentSpeaker, setCurrentSpeaker} from "./speakers";
 import {lerp} from "../utils/math/number";
 import {Howl} from "howler";
 import {tickerWait} from "./tickerWait";
+import {Step1, Step2} from "../typedAssets/sounds";
 
 export interface CharacterArgs
 {
@@ -52,18 +53,23 @@ export function character({color, faceTexture, headTexture, voice}: CharacterArg
                 character.subimage = 0;
                 let pedometer = 0;
                 let virtualX = character.x;
+                let stepSoundsCount = 0;
                 await tickerWait(() => {
                    pedometer += speed;
                    if (pedometer > 8)
                    {
                        character.subimage = character.subimage === 0 ? 1 : 0;
                        pedometer = 0;
+                       if (character.subimage === 0)
+                           [Step1, Step2][(stepSoundsCount++) % 2].play();
                    }
                    virtualX += sign * speed;
                    if ((sign > 0 && virtualX >= x) || (sign < 0 && virtualX <= x))
                    {
                        virtualX = x;
                        character.subimage = 0;
+                       if (stepSoundsCount === 0)
+                           Step1.play();
                    }
                    character.x = Math.round(virtualX);
                    return virtualX === x;

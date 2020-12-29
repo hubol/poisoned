@@ -12,6 +12,16 @@ export const MathAppear = new Howl({
     
 });
 
+export const Step1 = new Howl({
+    src: [require("../../.converted/sounds/step1.ogg"), require("../../.converted/sounds/step1.mp3")],
+    
+});
+
+export const Step2 = new Howl({
+    src: [require("../../.converted/sounds/step2.ogg"), require("../../.converted/sounds/step2.mp3")],
+    
+});
+
 export const VoiceDecay = new Howl({
     src: [require("../../.converted/sounds/voice decay.ogg"), require("../../.converted/sounds/voice decay.mp3")],
     
