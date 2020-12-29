@@ -7,8 +7,10 @@ import {breadGarden} from "./scenes/breadGarden";
 import {hyvee} from "./scenes/hyvee";
 import {zoomWithJosh} from "./scenes/zoomWithJosh";
 import {lunchWithExCoworkers} from "./scenes/lunchWithExCoworkers";
+import {dinnerTable} from "./scenes/dinnerTable";
 
 export const runOfShow = [
+    dinnerTable,
     lunchWithExCoworkers,
     hyvee,
     zoomWithJosh,
