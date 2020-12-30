@@ -2,6 +2,7 @@ import * as PIXI from "pixi.js";
     
 // This file is generated. Do not touch.
 
+export let BackgroundBarnesAndNobleParkingLot: PIXI.Texture;
 export let BackgroundBathroomExterior: PIXI.Texture;
 export let BackgroundBreadGarden: PIXI.Texture;
 export let BackgroundCafeExterior: PIXI.Texture;
@@ -40,6 +41,9 @@ export let PythagoreanTheorem: PIXI.Texture;
 export function loadTexturesAsync()
 {
     const loader = new PIXI.Loader();
+
+    const BackgroundBarnesAndNobleParkingLotPath = require("../../assets/images/background/barnes and noble parking lot.png");
+    loader.add(BackgroundBarnesAndNobleParkingLotPath); 
 
     const BackgroundBathroomExteriorPath = require("../../assets/images/background/bathroom exterior.png");
     loader.add(BackgroundBathroomExteriorPath); 
@@ -144,6 +148,7 @@ export function loadTexturesAsync()
     return new Promise<void>(resolve =>
     {
         loader.load((_, resources) => {
+            BackgroundBarnesAndNobleParkingLot = resources[BackgroundBarnesAndNobleParkingLotPath]?.texture as PIXI.Texture;
             BackgroundBathroomExterior = resources[BackgroundBathroomExteriorPath]?.texture as PIXI.Texture;
             BackgroundBreadGarden = resources[BackgroundBreadGardenPath]?.texture as PIXI.Texture;
             BackgroundCafeExterior = resources[BackgroundCafeExteriorPath]?.texture as PIXI.Texture;
