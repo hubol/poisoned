@@ -1,8 +1,8 @@
 import {
-    CharacterFaceAmusedClosed, CharacterFaceChristian,
+    CharacterFaceAmusedClosed, CharacterFaceAmusedNose, CharacterFaceChristian,
     CharacterFaceClueless,
     CharacterFaceDead, CharacterFaceMiserable, CharacterFacePeering,
-    CharacterFaceWhitesSmile, CharacterHeadBald, CharacterHeadBoyish,
+    CharacterFaceWhitesSmile, CharacterHeadBald, CharacterHeadBoyish, CharacterHeadBun,
     CharacterHeadLemon, CharacterHeadMessy, CharacterHeadPointed,
     CharacterHeadSharp, CharacterHeadShoulderLengthHair
 } from "../typedAssets/textures";
@@ -19,6 +19,7 @@ export const styles = {
     josh: style(0xC7B6EA, CharacterHeadBoyish, CharacterFaceChristian, VoiceRough),
     keane: style(0x92C98D, CharacterHeadShoulderLengthHair, CharacterFaceMiserable, VoiceLow),
     valera: style(0xB2B596, CharacterHeadBald, CharacterFaceClueless, VoiceRough),
+    kalmia: style(0x8EC8FF, CharacterHeadBun, CharacterFaceAmusedNose, VoiceGay),
 };
 
 function style(color: number, headTexture: Texture, faceTexture: Texture, voice: Howl): CharacterArgs

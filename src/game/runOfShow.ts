@@ -9,8 +9,10 @@ import {zoomWithJosh} from "./scenes/zoomWithJosh";
 import {lunchWithExCoworkers} from "./scenes/lunchWithExCoworkers";
 import {dinnerTable} from "./scenes/dinnerTable";
 import {tvStudio} from "./scenes/tvStudio";
+import {livingRoom} from "./scenes/livingRoom";
 
 export const runOfShow = [
+    livingRoom,
     tvStudio,
     dinnerTable,
     lunchWithExCoworkers,

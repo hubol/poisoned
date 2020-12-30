@@ -7,6 +7,7 @@ export let BackgroundBreadGarden: PIXI.Texture;
 export let BackgroundCafeExterior: PIXI.Texture;
 export let BackgroundDinnerTable: PIXI.Texture;
 export let BackgroundHyvee: PIXI.Texture;
+export let BackgroundLivingRoom: PIXI.Texture;
 export let BackgroundLunchWithExCoworkers: PIXI.Texture;
 export let BackgroundOliveGarden: PIXI.Texture;
 export let BackgroundStreetCorner: PIXI.Texture;
@@ -14,6 +15,7 @@ export let BackgroundTvStudio: PIXI.Texture;
 export let BackgroundZoomWithJosh: PIXI.Texture;
 export let CharacterBody: PIXI.Texture;
 export let CharacterFaceAmusedClosed: PIXI.Texture;
+export let CharacterFaceAmusedNose: PIXI.Texture;
 export let CharacterFaceChristian: PIXI.Texture;
 export let CharacterFaceClueless: PIXI.Texture;
 export let CharacterFaceDead: PIXI.Texture;
@@ -22,6 +24,7 @@ export let CharacterFacePeering: PIXI.Texture;
 export let CharacterFaceWhitesSmile: PIXI.Texture;
 export let CharacterHeadBald: PIXI.Texture;
 export let CharacterHeadBoyish: PIXI.Texture;
+export let CharacterHeadBun: PIXI.Texture;
 export let CharacterHeadLemon: PIXI.Texture;
 export let CharacterHeadMessy: PIXI.Texture;
 export let CharacterHeadPointed: PIXI.Texture;
@@ -53,6 +56,9 @@ export function loadTexturesAsync()
     const BackgroundHyveePath = require("../../assets/images/background/hyvee.png");
     loader.add(BackgroundHyveePath); 
 
+    const BackgroundLivingRoomPath = require("../../assets/images/background/living room.png");
+    loader.add(BackgroundLivingRoomPath); 
+
     const BackgroundLunchWithExCoworkersPath = require("../../assets/images/background/lunch with ex coworkers.png");
     loader.add(BackgroundLunchWithExCoworkersPath); 
 
@@ -73,6 +79,9 @@ export function loadTexturesAsync()
 
     const CharacterFaceAmusedClosedPath = require("../../assets/images/character/face amused closed.png");
     loader.add(CharacterFaceAmusedClosedPath); 
+
+    const CharacterFaceAmusedNosePath = require("../../assets/images/character/face amused nose.png");
+    loader.add(CharacterFaceAmusedNosePath); 
 
     const CharacterFaceChristianPath = require("../../assets/images/character/face christian.png");
     loader.add(CharacterFaceChristianPath); 
@@ -97,6 +106,9 @@ export function loadTexturesAsync()
 
     const CharacterHeadBoyishPath = require("../../assets/images/character/head boyish.png");
     loader.add(CharacterHeadBoyishPath); 
+
+    const CharacterHeadBunPath = require("../../assets/images/character/head bun.png");
+    loader.add(CharacterHeadBunPath); 
 
     const CharacterHeadLemonPath = require("../../assets/images/character/head lemon.png");
     loader.add(CharacterHeadLemonPath); 
@@ -137,6 +149,7 @@ export function loadTexturesAsync()
             BackgroundCafeExterior = resources[BackgroundCafeExteriorPath]?.texture as PIXI.Texture;
             BackgroundDinnerTable = resources[BackgroundDinnerTablePath]?.texture as PIXI.Texture;
             BackgroundHyvee = resources[BackgroundHyveePath]?.texture as PIXI.Texture;
+            BackgroundLivingRoom = resources[BackgroundLivingRoomPath]?.texture as PIXI.Texture;
             BackgroundLunchWithExCoworkers = resources[BackgroundLunchWithExCoworkersPath]?.texture as PIXI.Texture;
             BackgroundOliveGarden = resources[BackgroundOliveGardenPath]?.texture as PIXI.Texture;
             BackgroundStreetCorner = resources[BackgroundStreetCornerPath]?.texture as PIXI.Texture;
@@ -144,6 +157,7 @@ export function loadTexturesAsync()
             BackgroundZoomWithJosh = resources[BackgroundZoomWithJoshPath]?.texture as PIXI.Texture;
             CharacterBody = resources[CharacterBodyPath]?.texture as PIXI.Texture;
             CharacterFaceAmusedClosed = resources[CharacterFaceAmusedClosedPath]?.texture as PIXI.Texture;
+            CharacterFaceAmusedNose = resources[CharacterFaceAmusedNosePath]?.texture as PIXI.Texture;
             CharacterFaceChristian = resources[CharacterFaceChristianPath]?.texture as PIXI.Texture;
             CharacterFaceClueless = resources[CharacterFaceCluelessPath]?.texture as PIXI.Texture;
             CharacterFaceDead = resources[CharacterFaceDeadPath]?.texture as PIXI.Texture;
@@ -152,6 +166,7 @@ export function loadTexturesAsync()
             CharacterFaceWhitesSmile = resources[CharacterFaceWhitesSmilePath]?.texture as PIXI.Texture;
             CharacterHeadBald = resources[CharacterHeadBaldPath]?.texture as PIXI.Texture;
             CharacterHeadBoyish = resources[CharacterHeadBoyishPath]?.texture as PIXI.Texture;
+            CharacterHeadBun = resources[CharacterHeadBunPath]?.texture as PIXI.Texture;
             CharacterHeadLemon = resources[CharacterHeadLemonPath]?.texture as PIXI.Texture;
             CharacterHeadMessy = resources[CharacterHeadMessyPath]?.texture as PIXI.Texture;
             CharacterHeadPointed = resources[CharacterHeadPointedPath]?.texture as PIXI.Texture;
