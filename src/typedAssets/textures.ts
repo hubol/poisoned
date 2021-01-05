@@ -10,10 +10,12 @@ export let BackgroundDinnerTable: PIXI.Texture;
 export let BackgroundHyvee: PIXI.Texture;
 export let BackgroundLivingRoom: PIXI.Texture;
 export let BackgroundLunchWithExCoworkers: PIXI.Texture;
+export let BackgroundMishasDriveway: PIXI.Texture;
 export let BackgroundOliveGarden: PIXI.Texture;
 export let BackgroundStreetCorner: PIXI.Texture;
 export let BackgroundTvStudio: PIXI.Texture;
 export let BackgroundZoomWithJosh: PIXI.Texture;
+export let BuckwheatPackage: PIXI.Texture;
 export let CharacterBody: PIXI.Texture;
 export let CharacterFaceAmusedClosed: PIXI.Texture;
 export let CharacterFaceAmusedNose: PIXI.Texture;
@@ -37,6 +39,8 @@ export let Cone: PIXI.Texture;
 export let HeldHands: PIXI.Texture;
 export let Ipad: PIXI.Texture;
 export let IsoscelesTriangle: PIXI.Texture;
+export let MishasJacket: PIXI.Texture;
+export let PaintedBox: PIXI.Texture;
 export let PythagoreanTheorem: PIXI.Texture;
 
 
@@ -68,6 +72,9 @@ export function loadTexturesAsync()
     const BackgroundLunchWithExCoworkersPath = require("../../assets/images/background/lunch with ex coworkers.png");
     loader.add(BackgroundLunchWithExCoworkersPath); 
 
+    const BackgroundMishasDrivewayPath = require("../../assets/images/background/mishas driveway.png");
+    loader.add(BackgroundMishasDrivewayPath); 
+
     const BackgroundOliveGardenPath = require("../../assets/images/background/olive garden.png");
     loader.add(BackgroundOliveGardenPath); 
 
@@ -79,6 +86,9 @@ export function loadTexturesAsync()
 
     const BackgroundZoomWithJoshPath = require("../../assets/images/background/zoom with josh.png");
     loader.add(BackgroundZoomWithJoshPath); 
+
+    const BuckwheatPackagePath = require("../../assets/images/buckwheat package.png");
+    loader.add(BuckwheatPackagePath); 
 
     const CharacterBodyPath = require("../../assets/images/character/body.png");
     loader.add(CharacterBodyPath); 
@@ -149,6 +159,12 @@ export function loadTexturesAsync()
     const IsoscelesTrianglePath = require("../../assets/images/isosceles triangle.png");
     loader.add(IsoscelesTrianglePath); 
 
+    const MishasJacketPath = require("../../assets/images/mishas jacket.png");
+    loader.add(MishasJacketPath); 
+
+    const PaintedBoxPath = require("../../assets/images/painted box.png");
+    loader.add(PaintedBoxPath); 
+
     const PythagoreanTheoremPath = require("../../assets/images/pythagorean theorem.png");
     loader.add(PythagoreanTheoremPath); 
 
@@ -164,10 +180,12 @@ export function loadTexturesAsync()
             BackgroundHyvee = resources[BackgroundHyveePath]?.texture as PIXI.Texture;
             BackgroundLivingRoom = resources[BackgroundLivingRoomPath]?.texture as PIXI.Texture;
             BackgroundLunchWithExCoworkers = resources[BackgroundLunchWithExCoworkersPath]?.texture as PIXI.Texture;
+            BackgroundMishasDriveway = resources[BackgroundMishasDrivewayPath]?.texture as PIXI.Texture;
             BackgroundOliveGarden = resources[BackgroundOliveGardenPath]?.texture as PIXI.Texture;
             BackgroundStreetCorner = resources[BackgroundStreetCornerPath]?.texture as PIXI.Texture;
             BackgroundTvStudio = resources[BackgroundTvStudioPath]?.texture as PIXI.Texture;
             BackgroundZoomWithJosh = resources[BackgroundZoomWithJoshPath]?.texture as PIXI.Texture;
+            BuckwheatPackage = resources[BuckwheatPackagePath]?.texture as PIXI.Texture;
             CharacterBody = resources[CharacterBodyPath]?.texture as PIXI.Texture;
             CharacterFaceAmusedClosed = resources[CharacterFaceAmusedClosedPath]?.texture as PIXI.Texture;
             CharacterFaceAmusedNose = resources[CharacterFaceAmusedNosePath]?.texture as PIXI.Texture;
@@ -191,6 +209,8 @@ export function loadTexturesAsync()
             HeldHands = resources[HeldHandsPath]?.texture as PIXI.Texture;
             Ipad = resources[IpadPath]?.texture as PIXI.Texture;
             IsoscelesTriangle = resources[IsoscelesTrianglePath]?.texture as PIXI.Texture;
+            MishasJacket = resources[MishasJacketPath]?.texture as PIXI.Texture;
+            PaintedBox = resources[PaintedBoxPath]?.texture as PIXI.Texture;
             PythagoreanTheorem = resources[PythagoreanTheoremPath]?.texture as PIXI.Texture;
 
             resolve();
