@@ -20,6 +20,7 @@ export let CharacterFaceAmusedNose: PIXI.Texture;
 export let CharacterFaceChristian: PIXI.Texture;
 export let CharacterFaceClueless: PIXI.Texture;
 export let CharacterFaceDead: PIXI.Texture;
+export let CharacterFaceIntense: PIXI.Texture;
 export let CharacterFaceMiserable: PIXI.Texture;
 export let CharacterFacePeering: PIXI.Texture;
 export let CharacterFaceWhitesSmile: PIXI.Texture;
@@ -31,6 +32,7 @@ export let CharacterHeadMessy: PIXI.Texture;
 export let CharacterHeadPointed: PIXI.Texture;
 export let CharacterHeadSharp: PIXI.Texture;
 export let CharacterHeadShoulderLengthHair: PIXI.Texture;
+export let CharacterHeadWilted: PIXI.Texture;
 export let Cone: PIXI.Texture;
 export let HeldHands: PIXI.Texture;
 export let Ipad: PIXI.Texture;
@@ -96,6 +98,9 @@ export function loadTexturesAsync()
     const CharacterFaceDeadPath = require("../../assets/images/character/face dead.png");
     loader.add(CharacterFaceDeadPath); 
 
+    const CharacterFaceIntensePath = require("../../assets/images/character/face intense.png");
+    loader.add(CharacterFaceIntensePath); 
+
     const CharacterFaceMiserablePath = require("../../assets/images/character/face miserable.png");
     loader.add(CharacterFaceMiserablePath); 
 
@@ -128,6 +133,9 @@ export function loadTexturesAsync()
 
     const CharacterHeadShoulderLengthHairPath = require("../../assets/images/character/head shoulder length hair.png");
     loader.add(CharacterHeadShoulderLengthHairPath); 
+
+    const CharacterHeadWiltedPath = require("../../assets/images/character/head wilted.png");
+    loader.add(CharacterHeadWiltedPath); 
 
     const ConePath = require("../../assets/images/cone.png");
     loader.add(ConePath); 
@@ -166,6 +174,7 @@ export function loadTexturesAsync()
             CharacterFaceChristian = resources[CharacterFaceChristianPath]?.texture as PIXI.Texture;
             CharacterFaceClueless = resources[CharacterFaceCluelessPath]?.texture as PIXI.Texture;
             CharacterFaceDead = resources[CharacterFaceDeadPath]?.texture as PIXI.Texture;
+            CharacterFaceIntense = resources[CharacterFaceIntensePath]?.texture as PIXI.Texture;
             CharacterFaceMiserable = resources[CharacterFaceMiserablePath]?.texture as PIXI.Texture;
             CharacterFacePeering = resources[CharacterFacePeeringPath]?.texture as PIXI.Texture;
             CharacterFaceWhitesSmile = resources[CharacterFaceWhitesSmilePath]?.texture as PIXI.Texture;
@@ -177,6 +186,7 @@ export function loadTexturesAsync()
             CharacterHeadPointed = resources[CharacterHeadPointedPath]?.texture as PIXI.Texture;
             CharacterHeadSharp = resources[CharacterHeadSharpPath]?.texture as PIXI.Texture;
             CharacterHeadShoulderLengthHair = resources[CharacterHeadShoulderLengthHairPath]?.texture as PIXI.Texture;
+            CharacterHeadWilted = resources[CharacterHeadWiltedPath]?.texture as PIXI.Texture;
             Cone = resources[ConePath]?.texture as PIXI.Texture;
             HeldHands = resources[HeldHandsPath]?.texture as PIXI.Texture;
             Ipad = resources[IpadPath]?.texture as PIXI.Texture;

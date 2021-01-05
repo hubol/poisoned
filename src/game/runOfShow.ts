@@ -11,8 +11,10 @@ import {dinnerTable} from "./scenes/dinnerTable";
 import {tvStudio} from "./scenes/tvStudio";
 import {livingRoom} from "./scenes/livingRoom";
 import {barnesAndNobleParkingLot} from "./scenes/barnesAndNobleParkingLot";
+import {mishasDriveway} from "./scenes/mishasDriveway";
 
 export const runOfShow = [
+    mishasDriveway,
     barnesAndNobleParkingLot,
     livingRoom,
     tvStudio,
