@@ -15,6 +15,7 @@ export let BackgroundOliveGarden: PIXI.Texture;
 export let BackgroundStreetCorner: PIXI.Texture;
 export let BackgroundTvStudio: PIXI.Texture;
 export let BackgroundZoomWithJosh: PIXI.Texture;
+export let BackgroundZoomWithMisha: PIXI.Texture;
 export let BuckwheatPackage: PIXI.Texture;
 export let CharacterBody: PIXI.Texture;
 export let CharacterFaceAmusedClosed: PIXI.Texture;
@@ -88,6 +89,9 @@ export function loadTexturesAsync()
 
     const BackgroundZoomWithJoshPath = require("../../assets/images/background/zoom with josh.png");
     loader.add(BackgroundZoomWithJoshPath); 
+
+    const BackgroundZoomWithMishaPath = require("../../assets/images/background/zoom with misha.png");
+    loader.add(BackgroundZoomWithMishaPath); 
 
     const BuckwheatPackagePath = require("../../assets/images/buckwheat package.png");
     loader.add(BuckwheatPackagePath); 
@@ -193,6 +197,7 @@ export function loadTexturesAsync()
             BackgroundStreetCorner = resources[BackgroundStreetCornerPath]?.texture as PIXI.Texture;
             BackgroundTvStudio = resources[BackgroundTvStudioPath]?.texture as PIXI.Texture;
             BackgroundZoomWithJosh = resources[BackgroundZoomWithJoshPath]?.texture as PIXI.Texture;
+            BackgroundZoomWithMisha = resources[BackgroundZoomWithMishaPath]?.texture as PIXI.Texture;
             BuckwheatPackage = resources[BuckwheatPackagePath]?.texture as PIXI.Texture;
             CharacterBody = resources[CharacterBodyPath]?.texture as PIXI.Texture;
             CharacterFaceAmusedClosed = resources[CharacterFaceAmusedClosedPath]?.texture as PIXI.Texture;

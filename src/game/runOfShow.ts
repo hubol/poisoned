@@ -12,8 +12,10 @@ import {tvStudio} from "./scenes/tvStudio";
 import {livingRoom} from "./scenes/livingRoom";
 import {barnesAndNobleParkingLot} from "./scenes/barnesAndNobleParkingLot";
 import {mishasDriveway} from "./scenes/mishasDriveway";
+import {zoomWithMisha} from "./scenes/zoomWithMisha";
 
 export const runOfShow = [
+    zoomWithMisha,
     mishasDriveway,
     barnesAndNobleParkingLot,
     livingRoom,
