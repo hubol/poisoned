@@ -52,6 +52,11 @@ export const VoiceRough = new Howl({
     
 });
 
+export const VoiceSmooth = new Howl({
+    src: [require("../../.converted/sounds/voice smooth.ogg"), require("../../.converted/sounds/voice smooth.mp3")],
+    
+});
+
 export const VoiceSoviet = new Howl({
     src: [require("../../.converted/sounds/voice soviet.ogg"), require("../../.converted/sounds/voice soviet.mp3")],
     

@@ -9,7 +9,7 @@ import {
 import {Texture} from "pixi.js";
 import {Howl} from "howler";
 import {CharacterArgs} from "./character";
-import {VoiceDecay2, VoiceGay, VoiceLow, VoiceRough, VoiceSoviet} from "../typedAssets/sounds";
+import {VoiceDecay2, VoiceGay, VoiceLow, VoiceRough, VoiceSmooth, VoiceSoviet} from "../typedAssets/sounds";
 
 export const styles = {
     hubol: style(0xF4D623, CharacterHeadLemon, CharacterFaceWhitesSmile, VoiceDecay2),
@@ -21,7 +21,7 @@ export const styles = {
     valera: style(0xB2B596, CharacterHeadBald, CharacterFaceClueless, VoiceRough),
     kalmia: style(0x8EC8FF, CharacterHeadBun, CharacterFaceAmusedNose, VoiceGay),
     misha: style(0x3DBEFF, CharacterHeadWilted, CharacterFaceIntense, VoiceSoviet),
-    megan: style(0xACAAFF, CharacterHeadNiceLongHair, CharacterFaceLashes, VoiceGay)
+    megan: style(0xACAAFF, CharacterHeadNiceLongHair, CharacterFaceLashes, VoiceSmooth)
 };
 
 function style(color: number, headTexture: Texture, faceTexture: Texture, voice: Howl): CharacterArgs
