@@ -13,8 +13,10 @@ import {livingRoom} from "./scenes/livingRoom";
 import {barnesAndNobleParkingLot} from "./scenes/barnesAndNobleParkingLot";
 import {mishasDriveway} from "./scenes/mishasDriveway";
 import {zoomWithMisha} from "./scenes/zoomWithMisha";
+import {bentonApartment} from "./scenes/bentonApartment";
 
 export const runOfShow = [
+    bentonApartment,
     bathroomExterior,
     lunchWithExCoworkers,
     breadGarden,
