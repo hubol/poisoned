@@ -1,9 +1,9 @@
 import {
     CharacterFaceAmusedClosed, CharacterFaceAmusedNose, CharacterFaceChristian,
     CharacterFaceClueless,
-    CharacterFaceDead, CharacterFaceIntense, CharacterFaceMiserable, CharacterFacePeering,
+    CharacterFaceDead, CharacterFaceIntense, CharacterFaceLashes, CharacterFaceMiserable, CharacterFacePeering,
     CharacterFaceWhitesSmile, CharacterHeadBald, CharacterHeadBoyish, CharacterHeadBun,
-    CharacterHeadLemon, CharacterHeadMessy, CharacterHeadPointed,
+    CharacterHeadLemon, CharacterHeadMessy, CharacterHeadNiceLongHair, CharacterHeadPointed,
     CharacterHeadSharp, CharacterHeadShoulderLengthHair, CharacterHeadWilted
 } from "../typedAssets/textures";
 import {Texture} from "pixi.js";
@@ -20,7 +20,8 @@ export const styles = {
     keane: style(0x92C98D, CharacterHeadShoulderLengthHair, CharacterFaceMiserable, VoiceLow),
     valera: style(0xB2B596, CharacterHeadBald, CharacterFaceClueless, VoiceRough),
     kalmia: style(0x8EC8FF, CharacterHeadBun, CharacterFaceAmusedNose, VoiceGay),
-    misha: style(0x3DBEFF, CharacterHeadWilted, CharacterFaceIntense, VoiceSoviet)
+    misha: style(0x3DBEFF, CharacterHeadWilted, CharacterFaceIntense, VoiceSoviet),
+    megan: style(0xACAAFF, CharacterHeadNiceLongHair, CharacterFaceLashes, VoiceGay)
 };
 
 function style(color: number, headTexture: Texture, faceTexture: Texture, voice: Howl): CharacterArgs

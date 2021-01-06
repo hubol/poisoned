@@ -23,6 +23,7 @@ export let CharacterFaceChristian: PIXI.Texture;
 export let CharacterFaceClueless: PIXI.Texture;
 export let CharacterFaceDead: PIXI.Texture;
 export let CharacterFaceIntense: PIXI.Texture;
+export let CharacterFaceLashes: PIXI.Texture;
 export let CharacterFaceMiserable: PIXI.Texture;
 export let CharacterFacePeering: PIXI.Texture;
 export let CharacterFaceWhitesSmile: PIXI.Texture;
@@ -31,6 +32,7 @@ export let CharacterHeadBoyish: PIXI.Texture;
 export let CharacterHeadBun: PIXI.Texture;
 export let CharacterHeadLemon: PIXI.Texture;
 export let CharacterHeadMessy: PIXI.Texture;
+export let CharacterHeadNiceLongHair: PIXI.Texture;
 export let CharacterHeadPointed: PIXI.Texture;
 export let CharacterHeadSharp: PIXI.Texture;
 export let CharacterHeadShoulderLengthHair: PIXI.Texture;
@@ -111,6 +113,9 @@ export function loadTexturesAsync()
     const CharacterFaceIntensePath = require("../../assets/images/character/face intense.png");
     loader.add(CharacterFaceIntensePath); 
 
+    const CharacterFaceLashesPath = require("../../assets/images/character/face lashes.png");
+    loader.add(CharacterFaceLashesPath); 
+
     const CharacterFaceMiserablePath = require("../../assets/images/character/face miserable.png");
     loader.add(CharacterFaceMiserablePath); 
 
@@ -134,6 +139,9 @@ export function loadTexturesAsync()
 
     const CharacterHeadMessyPath = require("../../assets/images/character/head messy.png");
     loader.add(CharacterHeadMessyPath); 
+
+    const CharacterHeadNiceLongHairPath = require("../../assets/images/character/head nice long hair.png");
+    loader.add(CharacterHeadNiceLongHairPath); 
 
     const CharacterHeadPointedPath = require("../../assets/images/character/head pointed.png");
     loader.add(CharacterHeadPointedPath); 
@@ -193,6 +201,7 @@ export function loadTexturesAsync()
             CharacterFaceClueless = resources[CharacterFaceCluelessPath]?.texture as PIXI.Texture;
             CharacterFaceDead = resources[CharacterFaceDeadPath]?.texture as PIXI.Texture;
             CharacterFaceIntense = resources[CharacterFaceIntensePath]?.texture as PIXI.Texture;
+            CharacterFaceLashes = resources[CharacterFaceLashesPath]?.texture as PIXI.Texture;
             CharacterFaceMiserable = resources[CharacterFaceMiserablePath]?.texture as PIXI.Texture;
             CharacterFacePeering = resources[CharacterFacePeeringPath]?.texture as PIXI.Texture;
             CharacterFaceWhitesSmile = resources[CharacterFaceWhitesSmilePath]?.texture as PIXI.Texture;
@@ -201,6 +210,7 @@ export function loadTexturesAsync()
             CharacterHeadBun = resources[CharacterHeadBunPath]?.texture as PIXI.Texture;
             CharacterHeadLemon = resources[CharacterHeadLemonPath]?.texture as PIXI.Texture;
             CharacterHeadMessy = resources[CharacterHeadMessyPath]?.texture as PIXI.Texture;
+            CharacterHeadNiceLongHair = resources[CharacterHeadNiceLongHairPath]?.texture as PIXI.Texture;
             CharacterHeadPointed = resources[CharacterHeadPointedPath]?.texture as PIXI.Texture;
             CharacterHeadSharp = resources[CharacterHeadSharpPath]?.texture as PIXI.Texture;
             CharacterHeadShoulderLengthHair = resources[CharacterHeadShoulderLengthHairPath]?.texture as PIXI.Texture;
