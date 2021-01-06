@@ -15,20 +15,20 @@ import {mishasDriveway} from "./scenes/mishasDriveway";
 import {zoomWithMisha} from "./scenes/zoomWithMisha";
 
 export const runOfShow = [
-    zoomWithMisha,
-    mishasDriveway,
-    barnesAndNobleParkingLot,
+    bathroomExterior,
+    lunchWithExCoworkers,
+    breadGarden,
+    zoomWithJosh,
     livingRoom,
     tvStudio,
-    dinnerTable,
-    lunchWithExCoworkers,
     hyvee,
-    zoomWithJosh,
-    breadGarden,
+    dinnerTable,
     cafeExterior,
-    bathroomExterior,
+    hickoryHill,
+    zoomWithMisha,
     oliveGarden2,
     streetCorner,
-    hickoryHill,
+    mishasDriveway,
+    barnesAndNobleParkingLot,
     oliveGarden1
 ];

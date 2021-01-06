@@ -28,5 +28,5 @@ export async function zoomWithMisha()
     await misha.say("I can't look at romance. When people are saying these things or kissing on TV, I have to look away.");
     await misha.say("I can look at them having sex, though. That's different. All the romance is over before then.");
 
-    await sleep(2000);
+    await sleep(1000);
 }
