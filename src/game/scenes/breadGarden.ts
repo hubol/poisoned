@@ -6,7 +6,7 @@ import {sleep} from "pissant";
 import {BackgroundBreadGarden, Cone, IsoscelesTriangle, PythagoreanTheorem} from "../../typedAssets/textures";
 import {add, normalize, scale, vector} from "../../utils/math/vector";
 import {lerp} from "../lerp";
-import {MathAppear} from "../../typedAssets/sounds";
+import {Buzz, MathAppear} from "../../typedAssets/sounds";
 
 export async function breadGarden()
 {
@@ -32,9 +32,11 @@ export async function breadGarden()
     await lerp(math, "alpha").to(0).over(250);
     const position = vector(hubol);
     hubol.shake.x = 1;
+    Buzz.play();
     await hubol.say("HMMMMM!!!");
     hubol.at(position);
     hubol.shake.x = 0;
+    Buzz.stop();
     await sleep(1000);
     await hubol.say("Maybe it's because you like me?");
     await sleep(1000);
