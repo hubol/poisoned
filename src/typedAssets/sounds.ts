@@ -7,6 +7,16 @@ export const CratePickup = new Howl({
     
 });
 
+export const DoorClose = new Howl({
+    src: [require("../../.converted/sounds/door close.ogg"), require("../../.converted/sounds/door close.mp3")],
+    
+});
+
+export const DoorOpen = new Howl({
+    src: [require("../../.converted/sounds/door open.ogg"), require("../../.converted/sounds/door open.mp3")],
+    
+});
+
 export const MathAppear = new Howl({
     src: [require("../../.converted/sounds/math appear.ogg"), require("../../.converted/sounds/math appear.mp3")],
     
@@ -24,6 +34,11 @@ export const Step1 = new Howl({
 
 export const Step2 = new Howl({
     src: [require("../../.converted/sounds/step2.ogg"), require("../../.converted/sounds/step2.mp3")],
+    
+});
+
+export const Tone = new Howl({
+    src: [require("../../.converted/sounds/tone.ogg"), require("../../.converted/sounds/tone.mp3")],
     
 });
 

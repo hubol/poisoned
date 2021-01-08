@@ -17,8 +17,9 @@ import {bentonApartment} from "./scenes/bentonApartment";
 import {nightWalk} from "./scenes/nightWalk";
 
 export const runOfShow = [
-    nightWalk,
     bentonApartment,
+    nightWalk,
+
     bathroomExterior,
     lunchWithExCoworkers,
     breadGarden,

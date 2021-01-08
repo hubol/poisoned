@@ -1,4 +1,4 @@
-import {character} from "../character";
+import {Character, character} from "../character";
 import {styles} from "../styles";
 import {sceneStage} from "../game";
 import {sleep} from "pissant";
@@ -7,7 +7,7 @@ import {lerp} from "../lerp";
 import {subimageTextures} from "../../utils/pixi/simpleSpritesheet";
 import {BackgroundBentonApartment} from "../../typedAssets/textures";
 import {merge} from "../../utils/merge";
-import {Step1, Step2} from "../../typedAssets/sounds";
+import {DoorClose, DoorOpen, Step1, Step2, Tone} from "../../typedAssets/sounds";
 
 export async function bentonApartment()
 {
@@ -36,8 +36,33 @@ export async function bentonApartment()
     await sleep(500);
     await megan.say("I let him hit it raw.")
     await sleep(250);
+    const tone = createTone(hubol);
+    tone.start();
     await shrink(hubol);
+    tone.stop();
     await sleep(1000);
+}
+
+function createTone(character: Character)
+{
+    const sound = Tone;
+    sound.loop(true);
+
+    character.withStep(() => {
+        sound.rate(character.scale.y * 2 + 1);
+        sound.volume(character.scale.y);
+    });
+
+    return {
+        start()
+        {
+            sound.play();
+        },
+        stop()
+        {
+            sound.stop();
+        }
+    }
 }
 
 async function walk(steps = 6)
@@ -63,10 +88,12 @@ function makeDoor()
     return merge(sprite, {
         open()
         {
+            DoorOpen.play();
             sprite.texture = backgroundTextures[1];
         },
         close()
         {
+            DoorClose.play();
             sprite.texture = backgroundTextures[0];
         }
     })
