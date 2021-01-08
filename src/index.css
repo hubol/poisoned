@@ -56,3 +56,14 @@ noscript {
     color: #f0f0d0;
     padding: .1em .2em;
 }
+
+#loading {
+    color: #cd6767;
+    text-shadow: 0 0.33vw 1vw #cd676740;
+    font-size: 12vw;
+    font-weight: bold;
+}
+
+#loading::before {
+    content: "Loading";
+}
