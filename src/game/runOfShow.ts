@@ -15,11 +15,11 @@ import {mishasDriveway} from "./scenes/mishasDriveway";
 import {zoomWithMisha} from "./scenes/zoomWithMisha";
 import {bentonApartment} from "./scenes/bentonApartment";
 import {nightWalk} from "./scenes/nightWalk";
+import {titleCard} from "./scenes/titleCard";
 
 export const runOfShow = [
     bentonApartment,
-    nightWalk,
-
+    titleCard,
     bathroomExterior,
     lunchWithExCoworkers,
     breadGarden,
@@ -35,5 +35,6 @@ export const runOfShow = [
     streetCorner,
     mishasDriveway,
     barnesAndNobleParkingLot,
-    oliveGarden1
+    oliveGarden1,
+    nightWalk,
 ];

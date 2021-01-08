@@ -37,6 +37,11 @@ export const Step2 = new Howl({
     
 });
 
+export const TitleCardClang = new Howl({
+    src: [require("../../.converted/sounds/title card clang.ogg"), require("../../.converted/sounds/title card clang.mp3")],
+    
+});
+
 export const Tone = new Howl({
     src: [require("../../.converted/sounds/tone.ogg"), require("../../.converted/sounds/tone.mp3")],
     

@@ -46,6 +46,7 @@ export let IsoscelesTriangle: PIXI.Texture;
 export let MishasJacket: PIXI.Texture;
 export let PaintedBox: PIXI.Texture;
 export let PythagoreanTheorem: PIXI.Texture;
+export let TitleCard: PIXI.Texture;
 
 
 export function loadTexturesAsync()
@@ -184,6 +185,9 @@ export function loadTexturesAsync()
     const PythagoreanTheoremPath = require("../../assets/images/pythagorean theorem.png");
     loader.add(PythagoreanTheoremPath); 
 
+    const TitleCardPath = require("../../assets/images/title card.png");
+    loader.add(TitleCardPath); 
+
     
     return new Promise<void>(resolve =>
     {
@@ -232,6 +236,7 @@ export function loadTexturesAsync()
             MishasJacket = resources[MishasJacketPath]?.texture as PIXI.Texture;
             PaintedBox = resources[PaintedBoxPath]?.texture as PIXI.Texture;
             PythagoreanTheorem = resources[PythagoreanTheoremPath]?.texture as PIXI.Texture;
+            TitleCard = resources[TitleCardPath]?.texture as PIXI.Texture;
 
             resolve();
         });
