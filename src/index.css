@@ -59,11 +59,34 @@ noscript {
 
 #loading {
     color: #cd6767;
-    text-shadow: 0 0.33vw 1vw #cd676740;
+    text-shadow: 0 0.0275em 0.083em #cd6767a0;
     font-size: 12vw;
     font-weight: bold;
+    animation: wiggle 0.8s alternate-reverse infinite;
+    animation-timing-function: cubic-bezier(1,.02,.98,.6);
 }
 
 #loading::before {
     content: "Loading";
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: translate(.03em, -.02em) rotate(2deg);
+    }
+    25% {
+        transform: translate(-.01em, .03em) rotate(-.6deg);
+    }
+    50% {
+        transform: translate(.04em, .01em) rotate(.6deg);
+    }
+    75% {
+        transform: translate(-.02em, -.03em) rotate(-2deg);
+    }
+    12.5%, 87.5% {
+        transform: translate(.01em, -.01em) rotate(1.5deg);
+    }
+    62.5%, 37.5% {
+        transform: translate(-.01em, .01em) rotate(-1deg);
+    }
 }
