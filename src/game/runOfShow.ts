@@ -16,7 +16,6 @@ import {zoomWithMisha} from "./scenes/zoomWithMisha";
 import {bentonApartment} from "./scenes/bentonApartment";
 import {nightWalk} from "./scenes/nightWalk";
 import {titleCard} from "./scenes/titleCard";
-import {touchToStart} from "./scenes/touchToStart";
 
 export const runOfShow = [
     bentonApartment,
@@ -39,6 +38,3 @@ export const runOfShow = [
     oliveGarden1,
     nightWalk,
 ];
-
-if (true)
-    runOfShow.unshift(touchToStart);
