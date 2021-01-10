@@ -40,16 +40,13 @@ export let CharacterHeadSharp: PIXI.Texture;
 export let CharacterHeadShoulderLengthHair: PIXI.Texture;
 export let CharacterHeadWilted: PIXI.Texture;
 export let Cone: PIXI.Texture;
-export let Heart: PIXI.Texture;
 export let HeldHands: PIXI.Texture;
 export let Ipad: PIXI.Texture;
 export let IsoscelesTriangle: PIXI.Texture;
 export let MishasJacket: PIXI.Texture;
 export let PaintedBox: PIXI.Texture;
 export let PythagoreanTheorem: PIXI.Texture;
-export let ThankYou: PIXI.Texture;
 export let TitleCard: PIXI.Texture;
-export let TouchToStart: PIXI.Texture;
 
 
 export function loadTexturesAsync()
@@ -170,9 +167,6 @@ export function loadTexturesAsync()
     const ConePath = require("../../assets/images/cone.png");
     loader.add(ConePath); 
 
-    const HeartPath = require("../../assets/images/heart.png");
-    loader.add(HeartPath); 
-
     const HeldHandsPath = require("../../assets/images/held hands.png");
     loader.add(HeldHandsPath); 
 
@@ -191,14 +185,8 @@ export function loadTexturesAsync()
     const PythagoreanTheoremPath = require("../../assets/images/pythagorean theorem.png");
     loader.add(PythagoreanTheoremPath); 
 
-    const ThankYouPath = require("../../assets/images/thank you.png");
-    loader.add(ThankYouPath); 
-
     const TitleCardPath = require("../../assets/images/title card.png");
     loader.add(TitleCardPath); 
-
-    const TouchToStartPath = require("../../assets/images/touch to start.png");
-    loader.add(TouchToStartPath); 
 
     
     return new Promise<void>(resolve =>
@@ -242,16 +230,13 @@ export function loadTexturesAsync()
             CharacterHeadShoulderLengthHair = resources[CharacterHeadShoulderLengthHairPath]?.texture as PIXI.Texture;
             CharacterHeadWilted = resources[CharacterHeadWiltedPath]?.texture as PIXI.Texture;
             Cone = resources[ConePath]?.texture as PIXI.Texture;
-            Heart = resources[HeartPath]?.texture as PIXI.Texture;
             HeldHands = resources[HeldHandsPath]?.texture as PIXI.Texture;
             Ipad = resources[IpadPath]?.texture as PIXI.Texture;
             IsoscelesTriangle = resources[IsoscelesTrianglePath]?.texture as PIXI.Texture;
             MishasJacket = resources[MishasJacketPath]?.texture as PIXI.Texture;
             PaintedBox = resources[PaintedBoxPath]?.texture as PIXI.Texture;
             PythagoreanTheorem = resources[PythagoreanTheoremPath]?.texture as PIXI.Texture;
-            ThankYou = resources[ThankYouPath]?.texture as PIXI.Texture;
             TitleCard = resources[TitleCardPath]?.texture as PIXI.Texture;
-            TouchToStart = resources[TouchToStartPath]?.texture as PIXI.Texture;
 
             resolve();
         });
