@@ -13,20 +13,28 @@ html {
     box-shadow: 0 0 8vmin #cd6767;
 }
 
+button {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+#startButton::before {
+    content: "Hello";
+}
+
 #startButton {
-    background-color: #C0C0C0;
-    color: black;
+    background-color: #cd6767;
+    color: white;
     appearance: unset;
     display: inline-block;
     font-weight: bold;
-    max-width: 80vw;
-    font-size: 8vmin;
-    padding: .25em .33em;
+    padding: .1em .4em;
+    font-size: 8vw;
+    border-radius: 9999px;
     cursor: pointer;
-    border: 0.1875em outset #E0E0E0;
-    outline: 0;
+    border: none;
+    outline: none;
 
-    box-shadow: 3vmin 3vmin #006060;
+    box-shadow: 0 .2em 8vmin #cd676780;
 }
 
 #startButton:hover {
@@ -35,10 +43,8 @@ html {
 
 #startButton:active {
     filter: none;
-    border-style: inset;
-    text-indent: 0.1em;
-    box-shadow: 1.5vmin 1.5vmin #006060;
-    transform: translate(1.5vmin, 1.5vmin);
+    box-shadow: 0 .05em 3vmin #cd676780;
+    transform: translate(0, 1.5vmin);
 }
 
 body {

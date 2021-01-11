@@ -5,6 +5,9 @@ import * as PIXI from "pixi.js";
 import {loadTexturesAsync} from "./typedAssets/textures";
 import {environment} from "./utils/environment";
 import {devMute} from "./game/dev/devMute";
+import {removeMobileSafariGrayHighlight} from "./utils/browser/removeMobileSafariGrayHighlight";
+
+removeMobileSafariGrayHighlight();
 
 async function initialize()
 {
@@ -31,4 +34,18 @@ function createLoadingElement()
     return loadingElement;
 }
 
-window.onload = initialize;
+if (environment.isProduction && !environment.isElectron)
+    document.body.appendChild(createStartGameButtonElement());
+else
+    window.onload = initialize;
+
+function createStartGameButtonElement()
+{
+    const buttonElement = document.createElement("button");
+    buttonElement.id = "startButton";
+    buttonElement.onclick = () => {
+        document.body.removeChild(buttonElement);
+        setTimeout(initialize);
+    };
+    return buttonElement;
+}
