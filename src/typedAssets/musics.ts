@@ -2,7 +2,7 @@ import { Howl } from 'howler';
     
 // This file is generated. Do not touch.
 
-export const Fly = new Howl({
-    src: [require("../../.converted/music/fly.ogg"), require("../../.converted/music/fly.mp3")],
+export const InTheNight = new Howl({
+    src: [require("../../.converted/music/in the night.ogg"), require("../../.converted/music/in the night.mp3")],
     preload: false
 });

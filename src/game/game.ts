@@ -4,6 +4,7 @@ import {Container, Graphics} from "pixi.js";
 import {makeOnClickAliasForSpacebarPress} from "./makeOnClickAliasForSpacebarPress";
 import {runOfShow} from "./runOfShow";
 import {Snap} from "../typedAssets/sounds";
+import {InTheNight} from "../typedAssets/musics";
 
 export const game = createGame({width: 128, height: 128, targetFps: 60, hideCursor: true});
 game.canvasElement.id = "gameCanvas";
@@ -17,6 +18,7 @@ export const sceneStage = game.stage.addChild(new Container());
 export const hudStage = game.stage.addChild(new Container());
 
 setTimeout(async () => {
+    InTheNight.load();
     for (const runOfShowElement of runOfShow) {
         Snap.play();
         background.tint = 0;

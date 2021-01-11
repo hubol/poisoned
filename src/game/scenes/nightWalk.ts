@@ -1,10 +1,13 @@
 import {Character, character} from "../character";
 import {styles} from "../styles";
-import {sleep} from "pissant";
+import {sleep, wait} from "pissant";
 import {sceneStage} from "../game";
-import {Graphics} from "pixi.js";
+import {Graphics, Sprite} from "pixi.js";
 import {narrator} from "../narrator";
 import {lerp} from "../lerp";
+import {InTheNight} from "../../typedAssets/musics";
+
+import {Credits, ThankYou, TitleCard} from "../../typedAssets/textures";
 
 export async function nightWalk()
 {
@@ -26,7 +29,7 @@ export async function nightWalk()
     await sleep(1000);
 
     await narrateAll(
-        "On walks sometimes, I think about how I would go about cataloging every moment of my life.",
+        "On walks sometimes, I think about how I might go about cataloging every moment of my life.",
         "But what would an absurd project like that even have to say?",
         "And at what point would I end up recursively cataloging the act of cataloging?",
         "Or would I arbitrarily leave that out?",
@@ -40,6 +43,23 @@ export async function nightWalk()
         "And all the people I've hurt.",
         "And I think about the future.",
         "And I think about the night.",);
+
+    InTheNight.play();
+    await waitForSongPosition(.963);
+    hubol.destroy();
+    await waitForSongPosition(2.862);
+    sceneStage.addChild(Sprite.from(TitleCard));
+    await waitForSongPosition(12.508);
+    sceneStage.addChild(Sprite.from(Credits));
+    await waitForSongPosition(22.139);
+    sceneStage.addChild(Sprite.from(ThankYou));
+    await wait(() => !InTheNight.playing());
+    closeGame();
+}
+
+async function waitForSongPosition(seconds: number)
+{
+    await wait(() => InTheNight.state() === "loaded" && InTheNight.seek() >= seconds, 5);
 }
 
 async function walkForever(character: Character, ms = 1000)
@@ -57,4 +77,9 @@ async function narrateAll(...messages: string[])
 {
     for (const message of messages)
         await narrator.say(message);
+}
+
+function closeGame()
+{
+    window.history.back();
 }
