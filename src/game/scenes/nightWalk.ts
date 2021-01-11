@@ -1,7 +1,7 @@
 import {Character, character} from "../character";
 import {styles} from "../styles";
 import {sleep, wait} from "pissant";
-import {sceneStage} from "../game";
+import {game, sceneStage} from "../game";
 import {Graphics, Sprite} from "pixi.js";
 import {narrator} from "../narrator";
 import {lerp} from "../lerp";
@@ -82,4 +82,5 @@ async function narrateAll(...messages: string[])
 function closeGame()
 {
     window.history.back();
+    game.canvasElement.remove();
 }
